@@ -6,6 +6,7 @@
 //  Copyright © 2018 Alex Breitmeyer. All rights reserved.
 //
 
+import QuartzCore
 import UIKit
 
 class ViewController: UIViewController {
@@ -96,6 +97,11 @@ class ViewController: UIViewController {
         score = 0
         round = 0
         startNewRound()
+        let transition = CATransition()
+        transition.type = kCATransitionFade
+        transition.duration = 1
+        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+            view.layer.add(transition, forKey: nil)
     }
     
     @IBOutlet weak var slider: UISlider!
